@@ -3,19 +3,27 @@
       <div class="card grey lighten-3">
         <div class="card-content">
           <h4 class="card-title center-align">Login</h4>
-          <form>
+          <form [formGroup]="fgValidator" (ngSubmit)="ValidarIdentificacion()">
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">email</i>
-                <input type="email" id="email" class="validate" />
-                <label for="email">Correo Electronico</label>
+                <input formControlName="usuario" type="email" id="email" class="validate" />
+                <label class="active" for="email">Correo Electronico</label>
+                <div *ngIf="ObtenerFgValidador.usuario.errors && (ObtenerFgValidador.usuario.dirty || ObtenerFgValidador.usuario.touched)" class="mensajesValidaciones">
+                  <strong *ngIf="ObtenerFgValidador.usuario.errors.required">Este campo es requerido</strong>
+                  <strong *ngIf="ObtenerFgValidador.usuario.errors.email">Debe tener formato de email</strong>
+                </div>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">vpn_key</i>
-                <input type="password" id="password" class="validate" />
-                <label for="email">Contraseña</label>
+                <input formControlName="clave" type="password" id="password" class="validate" />
+                <label class="active" for="email">Contraseña</label>
+                <div *ngIf="ObtenerFgValidador.clave.errors && (ObtenerFgValidador.clave.dirty || ObtenerFgValidador.clave.touched)" class="mensajesValidaciones">
+                  <strong *ngIf="ObtenerFgValidador.clave.errors.required">Este campo es requerido</strong>
+                  <strong *ngIf="ObtenerFgValidador.clave.errors.min">Debe tener formato de email</strong>
+                </div>
               </div>
             </div>
             <div class="row center-align">

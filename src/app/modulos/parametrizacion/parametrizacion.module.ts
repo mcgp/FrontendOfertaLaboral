@@ -12,6 +12,7 @@ import { ListarProfesionComponent } from './profesion/listar-profesion/listar-pr
 import { CrearProfesionComponent } from './profesion/crear-profesion/crear-profesion.component';
 import { EditarProfesionComponent } from './profesion/editar-profesion/editar-profesion.component';
 import { EliminarProfesionComponent } from './profesion/eliminar-profesion/eliminar-profesion.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -25,11 +26,12 @@ import { EliminarProfesionComponent } from './profesion/eliminar-profesion/elimi
     ListarProfesionComponent,
     CrearProfesionComponent,
     EditarProfesionComponent,
-    EliminarProfesionComponent
+    EliminarProfesionComponent,
   ],
   imports: [
     CommonModule,
-    ParametrizacionRoutingModule
+    ParametrizacionRoutingModule,
+    NgxPaginationModule
   ]
 })
 export class ParametrizacionModule { }
