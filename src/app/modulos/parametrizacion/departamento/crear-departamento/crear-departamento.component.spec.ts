@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CrearDepartamentoComponent } from './crear-departamento.component';
 
@@ -8,7 +9,9 @@ describe('CrearDepartamentoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrearDepartamentoComponent ]
+      declarations: [ CrearDepartamentoComponent ],
+      imports: [ReactiveFormsModule],  // Also add it to 'imports' array
+
     })
     .compileComponents();
   });
